@@ -1,12 +1,21 @@
 package com.climaescolar
 
 class Colegio implements Serializable {
+    
+    private static final long serialVersionUID = 1
+    
     def springSecurityService
-    private static final Date NULL_DATE = new Date(0)
+    
+    private static final Date NULL_DATE = new Date(0)   
+    
+    enum TipoColegio{
+        DISTRITAL,DISTRITAL_CONCESION,PRIVADO,PRIVADO_CONVENIO
+    }
+    
     //no modificable
     String dane
     String nombreLocalidad
-    String clase
+    TipoColegio tipoInstitucion
     String nombreInstitucion
     //entregados puedenser modificados
     String direccion
@@ -15,47 +24,48 @@ class Colegio implements Serializable {
     String email1
     String email2
     String nombreRector
+    
     //para ser llenados durante la sensibilizacion
-    Date fechaLlamada
-    String nombreProResponsable
+ 
+    String contactoEnInstitucion
     //si confirmacion no colocar colegio como critico
     Boolean confirmacion
-    String observaciones
+    String observacionesGenerales
     
     Boolean visitaPrevia
     String representanteUN
-    Date fecha
+    Date fechaVisita
     
     Boolean resultado
-    String observaciones2
+    String observacionesFinales
     
-    Date signupDate = NULL_DATE
-    String lastUpdatedBy
-    String hourUpdate 
+    Date fechaLlamada = NULL_DATE
+    String actualizo
+    String horaLlamada 
+    Localidad localidad
     
-    static hasMany = [jornadas:Jornada]
+    static hasMany = [jornadas : Jornada]
+    
     static constraints = {
         email1 (email: true, nullable: false, blank: false)
         email2 (email: true, nullable: true, blank: true )
-        telefono(nullable: false, blank: false, maxSize: 15)
+        telefono(nullable: false, blank: false, maxSize: 35)
         dane (nullable: false, blank: false, maxSize: 30)
-        nombreLocalidad (nullable: false, blank: false, maxSize: 30)
-        clase (nullable: false, blank: false, maxSize: 15)
         nombreInstitucion (nullable: false, blank: false, maxSize: 100)
         direccion (nullable: false, blank: false, maxSize: 100)
         barrio (nullable: false, blank: false, maxSize: 100)
         nombreRector (nullable: false, blank: false, maxSize: 100)
-        nombreProResponsable (nullable: true, blank: true, maxSize: 100)
-        observaciones (nullable: true, blank: true, maxSize: 100)
+        contactoEnInstitucion (nullable: true, blank: true, maxSize: 100)
+        observacionesGenerales (nullable: true, blank: true, maxSize: 100)
         representanteUN (nullable: true, blank: true, maxSize: 100)
-        observaciones2 (nullable: true, blank: true, maxSize: 100)
-        lastUpdatedBy nullable: true
-        hourUpdate nullable: true
+        observacionesFinales (nullable: true, blank: true, maxSize: 100)
+        fechaLlamada nullable: true
+        horaLlamada nullable: true
     }
     
     def beforeUpdate() {
-      lastUpdatedBy = springSecurityService.getCurrentUser().username
-      signupDate = new Date()
-      hourUpdate = (new Date().getHours()) + ':' + (new Date().getMinutes())
+      actualizo = springSecurityService.getCurrentUser().username
+      fechaLlamada = new Date()
+      horaLlamada = (new Date().getHours()) + ':' + (new Date().getMinutes())
     }
 }
