@@ -1,37 +1,29 @@
 <%@ page import="com.climaescolar.Colegio" %>
 
-
-
-<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'email1', 'error')} required">
-	<label for="email1">
-		<g:message code="colegio.email1.label" default="Email1" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field type="email" name="email1" required="" value="${colegioInstance?.email1}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'email2', 'error')} ">
-	<label for="email2">
-		<g:message code="colegio.email2.label" default="Email2" />
-		
-	</label>
-	<g:field type="email" name="email2" value="${colegioInstance?.email2}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'telefono', 'error')} required">
-	<label for="telefono">
-		<g:message code="colegio.telefono.label" default="Telefono" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="telefono" maxlength="35" required="" value="${colegioInstance?.telefono}"/>
-</div>
-
+<div class="datoscolegio" >
+    <h1>Datos del colegio</h1>
 <div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'dane', 'error')} required">
 	<label for="dane">
 		<g:message code="colegio.dane.label" default="Dane" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="dane" maxlength="30" required="" value="${colegioInstance?.dane}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'localidad', 'error')} required">
+	<label for="localidad">
+		<g:message code="colegio.localidad.label" default="Localidad" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select optionValue="nombreLocalidad" id="localidad" name="localidad.id" from="${com.climaescolar.Localidad.list()}" optionKey="id" required="" value="${colegioInstance?.localidad?.id}" class="many-to-one"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'tipoInstitucion', 'error')} required">
+	<label for="tipoInstitucion">
+		<g:message code="colegio.tipoInstitucion.label" default="Tipo Institucion" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select name="tipoInstitucion" from="${com.climaescolar.Colegio$TipoColegio?.values()}" keys="${com.climaescolar.Colegio$TipoColegio.values()*.name()}" required="" value="${colegioInstance?.tipoInstitucion?.name()}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'nombreInstitucion', 'error')} required">
@@ -42,29 +34,58 @@
 	<g:textField name="nombreInstitucion" maxlength="100" required="" value="${colegioInstance?.nombreInstitucion}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'direccion', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'direccion', 'error')}">
 	<label for="direccion">
 		<g:message code="colegio.direccion.label" default="Direccion" />
-		<span class="required-indicator">*</span>
+		
 	</label>
-	<g:textField name="direccion" maxlength="100" required="" value="${colegioInstance?.direccion}"/>
+	<g:textField name="direccion" maxlength="100" value="${colegioInstance?.direccion}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'barrio', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'barrio', 'error')} ">
 	<label for="barrio">
 		<g:message code="colegio.barrio.label" default="Barrio" />
-		<span class="required-indicator">*</span>
+		
 	</label>
-	<g:textField name="barrio" maxlength="100" required="" value="${colegioInstance?.barrio}"/>
+	<g:textField name="barrio" maxlength="100"  value="${colegioInstance?.barrio}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'nombreRector', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'telefono', 'error')} ">
+	<label for="telefono">
+		<g:message code="colegio.telefono.label" default="Telefono" />
+		
+	</label>
+	<g:textField name="telefono" maxlength="35"  value="${colegioInstance?.telefono}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'email1', 'error')} ">
+	<label for="email1">
+		<g:message code="colegio.email1.label" default="Email1" />
+		
+	</label>
+	<g:field type="email" name="email1" value="${colegioInstance?.email1}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'email2', 'error')} ">
+	<label for="email2">
+		<g:message code="colegio.email2.label" default="Email2" />
+		
+	</label>
+	<g:field type="email" name="email2" value="${colegioInstance?.email2}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'nombreRector', 'error')} ">
 	<label for="nombreRector">
 		<g:message code="colegio.nombreRector.label" default="Nombre Rector" />
-		<span class="required-indicator">*</span>
+		
 	</label>
-	<g:textField name="nombreRector" maxlength="100" required="" value="${colegioInstance?.nombreRector}"/>
+	<g:textField name="nombreRector" maxlength="100"  value="${colegioInstance?.nombreRector}"/>
 </div>
+</div>
+<div calss="datsosens">
+
+    <h1>Datos sensibilización</h1>
+
 
 <div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'contactoEnInstitucion', 'error')} ">
 	<label for="contactoEnInstitucion">
@@ -73,13 +94,28 @@
 	</label>
 	<g:textField name="contactoEnInstitucion" maxlength="100" value="${colegioInstance?.contactoEnInstitucion}"/>
 </div>
-
+<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'confirmacion', 'error')} ">
+	<label for="confirmacion">
+		<g:message code="colegio.confirmacion.label" default="Confirmacion" />
+		
+	</label>
+	<g:checkBox name="confirmacion" value="${colegioInstance?.confirmacion}" />
+</div>
 <div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'observacionesGenerales', 'error')} ">
 	<label for="observacionesGenerales">
 		<g:message code="colegio.observacionesGenerales.label" default="Observaciones Generales" />
 		
 	</label>
 	<g:textField name="observacionesGenerales" maxlength="100" value="${colegioInstance?.observacionesGenerales}"/>
+</div>
+
+
+<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'visitaPrevia', 'error')} ">
+	<label for="visitaPrevia">
+		<g:message code="colegio.visitaPrevia.label" default="Visita Previa" />
+		
+	</label>
+	<g:checkBox name="visitaPrevia" value="${colegioInstance?.visitaPrevia}" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'representanteUN', 'error')} ">
@@ -90,6 +126,23 @@
 	<g:textField name="representanteUN" maxlength="100" value="${colegioInstance?.representanteUN}"/>
 </div>
 
+
+<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'fechaVisita', 'error')} required">
+	<label for="fechaVisita">
+		<g:message code="colegio.fechaVisita.label" default="Fecha Visita" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:datePicker name="fechaVisita" precision="day"  value="${colegioInstance?.fechaVisita}"  />
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'resultado', 'error')} ">
+	<label for="resultado">
+		<g:message code="colegio.resultado.label" default="Resultado" />
+		
+	</label>
+	<g:checkBox name="resultado" value="${colegioInstance?.resultado}" />
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'observacionesFinales', 'error')} ">
 	<label for="observacionesFinales">
 		<g:message code="colegio.observacionesFinales.label" default="Observaciones Finales" />
@@ -98,6 +151,8 @@
 	<g:textField name="observacionesFinales" maxlength="100" value="${colegioInstance?.observacionesFinales}"/>
 </div>
 
+
+<h2>Datos de actualización</h2>
 <div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'fechaLlamada', 'error')} ">
 	<label for="fechaLlamada">
 		<g:message code="colegio.fechaLlamada.label" default="Fecha Llamada" />
@@ -121,22 +176,8 @@
 	</label>
 	<g:textField name="actualizo" value="${colegioInstance?.actualizo}"/>
 </div>
-
-<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'confirmacion', 'error')} ">
-	<label for="confirmacion">
-		<g:message code="colegio.confirmacion.label" default="Confirmacion" />
-		
-	</label>
-	<g:checkBox name="confirmacion" value="${colegioInstance?.confirmacion}" />
 </div>
-
-<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'fechaVisita', 'error')} required">
-	<label for="fechaVisita">
-		<g:message code="colegio.fechaVisita.label" default="Fecha Visita" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="fechaVisita" precision="day"  value="${colegioInstance?.fechaVisita}"  />
-</div>
+<h1>Jornadas del Colegio</h1>
 
 <div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'jornadas', 'error')} ">
 	<label for="jornadas">
@@ -155,43 +196,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'localidad', 'error')} required">
-	<label for="localidad">
-		<g:message code="colegio.localidad.label" default="Localidad" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="localidad" name="localidad.id" from="${com.climaescolar.Localidad.list()}" optionKey="id" required="" value="${colegioInstance?.localidad?.id}" class="many-to-one"/>
-</div>
 
-<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'nombreLocalidad', 'error')} ">
-	<label for="nombreLocalidad">
-		<g:message code="colegio.nombreLocalidad.label" default="Nombre Localidad" />
-		
-	</label>
-	<g:textField name="nombreLocalidad" value="${colegioInstance?.nombreLocalidad}"/>
-</div>
 
-<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'resultado', 'error')} ">
-	<label for="resultado">
-		<g:message code="colegio.resultado.label" default="Resultado" />
-		
-	</label>
-	<g:checkBox name="resultado" value="${colegioInstance?.resultado}" />
-</div>
 
-<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'tipoInstitucion', 'error')} required">
-	<label for="tipoInstitucion">
-		<g:message code="colegio.tipoInstitucion.label" default="Tipo Institucion" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select name="tipoInstitucion" from="${com.climaescolar.Colegio$TipoColegio?.values()}" keys="${com.climaescolar.Colegio$TipoColegio.values()*.name()}" required="" value="${colegioInstance?.tipoInstitucion?.name()}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'visitaPrevia', 'error')} ">
-	<label for="visitaPrevia">
-		<g:message code="colegio.visitaPrevia.label" default="Visita Previa" />
-		
-	</label>
-	<g:checkBox name="visitaPrevia" value="${colegioInstance?.visitaPrevia}" />
-</div>
 

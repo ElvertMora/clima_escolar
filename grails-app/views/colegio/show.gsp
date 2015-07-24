@@ -196,15 +196,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${colegioInstance?.nombreLocalidad}">
-				<li class="fieldcontain">
-					<span id="nombreLocalidad-label" class="property-label"><g:message code="colegio.nombreLocalidad.label" default="Nombre Localidad" /></span>
-					
-						<span class="property-value" aria-labelledby="nombreLocalidad-label"><g:fieldValue bean="${colegioInstance}" field="nombreLocalidad"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${colegioInstance?.resultado}">
 				<li class="fieldcontain">
 					<span id="resultado-label" class="property-label"><g:message code="colegio.resultado.label" default="Resultado" /></span>
