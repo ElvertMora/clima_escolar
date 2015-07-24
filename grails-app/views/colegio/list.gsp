@@ -22,38 +22,35 @@
 			</g:if>
 			<table>
 				<thead>
-					<tr>
-					
-						<g:sortableColumn property="email1" title="${message(code: 'colegio.email1.label', default: 'Email1')}" />
-					
-						<g:sortableColumn property="email2" title="${message(code: 'colegio.email2.label', default: 'Email2')}" />
-					
-						<g:sortableColumn property="telefono" title="${message(code: 'colegio.telefono.label', default: 'Telefono')}" />
-					
+					<tr>									
 						<g:sortableColumn property="dane" title="${message(code: 'colegio.dane.label', default: 'Dane')}" />
 					
 						<g:sortableColumn property="nombreInstitucion" title="${message(code: 'colegio.nombreInstitucion.label', default: 'Nombre Institucion')}" />
 					
 						<g:sortableColumn property="direccion" title="${message(code: 'colegio.direccion.label', default: 'Direccion')}" />
+                                                
+                                                <g:sortableColumn property="email1" title="${message(code: 'colegio.email1.label', default: 'Email1')}" />
+					
+						<g:sortableColumn property="email2" title="${message(code: 'colegio.email2.label', default: 'Email2')}" />
+					
+						<g:sortableColumn property="telefono" title="${message(code: 'colegio.telefono.label', default: 'Telefono')}" />
 					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${colegioInstanceList}" status="i" var="colegioInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">										
+						<td>${fieldValue(bean: colegioInstance, field: "dane")}</td>
 					
-						<td><g:link action="show" id="${colegioInstance.id}">${fieldValue(bean: colegioInstance, field: "email1")}</g:link></td>
+						<td><g:link action="show" id="${colegioInstance.id}">${fieldValue(bean: colegioInstance, field: "nombreInstitucion")}</g:link></td>
+					
+						<td>${fieldValue(bean: colegioInstance, field: "direccion")}</td>
+						
+                                                <td>${fieldValue(bean: colegioInstance, field: "email1")}</td>
 					
 						<td>${fieldValue(bean: colegioInstance, field: "email2")}</td>
 					
 						<td>${fieldValue(bean: colegioInstance, field: "telefono")}</td>
-					
-						<td>${fieldValue(bean: colegioInstance, field: "dane")}</td>
-					
-						<td>${fieldValue(bean: colegioInstance, field: "nombreInstitucion")}</td>
-					
-						<td>${fieldValue(bean: colegioInstance, field: "direccion")}</td>
-					
 					</tr>
 				</g:each>
 				</tbody>

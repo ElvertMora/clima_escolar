@@ -14,7 +14,7 @@ class Colegio implements Serializable {
     
     //no modificable
     String dane
-    String nombreLocalidad
+
     TipoColegio tipoInstitucion
     String nombreInstitucion
     //entregados puedenser modificados
@@ -47,14 +47,14 @@ class Colegio implements Serializable {
     static hasMany = [jornadas : Jornada]
     
     static constraints = {
-        email1 (email: true, nullable: false, blank: false)
+        email1 (email: true, nullable: true, blank: true)
         email2 (email: true, nullable: true, blank: true )
-        telefono(nullable: false, blank: false, maxSize: 35)
+        telefono(nullable: true, blank: true, maxSize: 35)
         dane (nullable: false, blank: false, maxSize: 30)
         nombreInstitucion (nullable: false, blank: false, maxSize: 100)
-        direccion (nullable: false, blank: false, maxSize: 100)
-        barrio (nullable: false, blank: false, maxSize: 100)
-        nombreRector (nullable: false, blank: false, maxSize: 100)
+        direccion (nullable: true, blank: true, maxSize: 100)
+        barrio (nullable: true, blank: true, maxSize: 100)
+        nombreRector (nullable: true, blank: true, maxSize: 100)
         contactoEnInstitucion (nullable: true, blank: true, maxSize: 100)
         observacionesGenerales (nullable: true, blank: true, maxSize: 100)
         representanteUN (nullable: true, blank: true, maxSize: 100)
