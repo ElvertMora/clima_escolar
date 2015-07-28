@@ -81,7 +81,28 @@
 	</label>
 	<g:textField name="nombreRector" maxlength="100"  value="${colegioInstance?.nombreRector}"/>
 </div>
+
+<h1>Jornadas del Colegio</h1>
+
+<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'jornadas', 'error')} ">
+	<label for="jornadas">
+		<g:message code="colegio.jornadas.label" default="Jornadas" />
+		
+	</label>
+	
+<ul class="one-to-many">
+<g:each in="${colegioInstance?.jornadas?}" var="j">
+    <li><g:link controller="jornada" action="show" id="${j.id}">${j?.tipo}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="jornada" action="create" params="['colegio.id': colegioInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'jornada.label', default: 'Jornada')])}</g:link>
+</li>
+</ul>
+
 </div>
+
+</div>
+
 <div calss="datsosens">
 
     <h1>Datos sensibilización</h1>
@@ -177,26 +198,3 @@
 	<g:textField name="actualizo" value="${colegioInstance?.actualizo}"/>
 </div>
 </div>
-<h1>Jornadas del Colegio</h1>
-
-<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'jornadas', 'error')} ">
-	<label for="jornadas">
-		<g:message code="colegio.jornadas.label" default="Jornadas" />
-		
-	</label>
-	
-<ul class="one-to-many">
-<g:each in="${colegioInstance?.jornadas?}" var="j">
-    <li><g:link controller="jornada" action="show" id="${j.id}">${j?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="jornada" action="create" params="['colegio.id': colegioInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'jornada.label', default: 'Jornada')])}</g:link>
-</li>
-</ul>
-
-</div>
-
-
-
-
-

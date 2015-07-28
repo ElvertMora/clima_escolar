@@ -98,6 +98,7 @@ grails.plugin.springsecurity.authority.className = 'com.climaescolar.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
+        '/home/indexAdmin':               ['ROLE_ADMIN'],
 	'/index.gsp':                     ['permitAll'],
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],

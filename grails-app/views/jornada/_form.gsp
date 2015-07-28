@@ -7,7 +7,7 @@
 		<g:message code="jornada.colegio.label" default="Colegio" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="colegio" name="colegio.id" from="${com.climaescolar.Colegio.list()}" optionKey="id" required="" value="${jornadaInstance?.colegio?.id}" class="many-to-one"/>
+	<g:select optionValue="nombreInstitucion" id="colegio" name="colegio.id" from="${com.climaescolar.Colegio.list()}" optionKey="id" required="" value="${jornadaInstance?.colegio?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: jornadaInstance, field: 'grados', 'error')} ">

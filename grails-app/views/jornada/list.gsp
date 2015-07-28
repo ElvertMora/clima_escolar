@@ -34,7 +34,7 @@
 				<g:each in="${jornadaInstanceList}" status="i" var="jornadaInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${jornadaInstance.id}">${fieldValue(bean: jornadaInstance, field: "colegio")}</g:link></td>
+						<td><g:link action="show" id="${jornadaInstance.id}">${fieldValue(bean: jornadaInstance, field: "colegio.nombreInstitucion")}</g:link></td>
 					
 						<td>${fieldValue(bean: jornadaInstance, field: "tipo")}</td>
 					

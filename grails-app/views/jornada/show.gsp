@@ -27,7 +27,7 @@
 				<li class="fieldcontain">
 					<span id="colegio-label" class="property-label"><g:message code="jornada.colegio.label" default="Colegio" /></span>
 					
-						<span class="property-value" aria-labelledby="colegio-label"><g:link controller="colegio" action="show" id="${jornadaInstance?.colegio?.id}">${jornadaInstance?.colegio?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="colegio-label"><g:link controller="colegio" action="show" id="${jornadaInstance?.colegio?.id}">${jornadaInstance?.colegio?.nombreInstitucion}</g:link></span>
 					
 				</li>
 				</g:if>
