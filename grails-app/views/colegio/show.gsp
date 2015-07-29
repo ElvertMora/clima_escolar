@@ -36,7 +36,7 @@
 				<li class="fieldcontain">
 					<span id="localidad-label" class="property-label"><g:message code="colegio.localidad.label" default="Localidad" /></span>
 					
-						<span class="property-value" aria-labelledby="localidad-label"><g:link controller="localidad" action="show" id="${colegioInstance?.localidad?.id}">${colegioInstance?.localidad?.nombreLocalidad}</g:link></span>
+						<span class="property-value" aria-labelledby="localidad-label">${colegioInstance?.localidad?.nombreLocalidad}</span>
 					
 				</li>
 				</g:if>
@@ -220,7 +220,7 @@
 					<span id="jornadas-label" class="property-label"><g:message code="colegio.jornadas.label" default="Jornadas" /></span>
 					
 						<g:each in="${colegioInstance.jornadas}" var="j">
-						<span class="property-value" aria-labelledby="jornadas-label"><g:link controller="jornada" action="show" id="${j.id}">${j?.tipo}</g:link></span>
+						<span class="property-value" aria-labelledby="jornadas-label"><g:link controller="jornada" action="show" id="${j.id}">${j?.tipo} - Sede ${j?.sede}</g:link></span>
 						</g:each>
 					
 				</li>
