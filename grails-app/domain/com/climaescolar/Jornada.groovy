@@ -7,6 +7,7 @@ class Jornada implements Serializable{
     }
     TipoJornada tipo
     Colegio colegio
+    String sede
     static belongsTo = [colegio:Colegio]
     static hasMany = [grados:Grado]
     static constraints = {

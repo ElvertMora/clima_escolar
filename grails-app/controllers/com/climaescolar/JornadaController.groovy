@@ -20,6 +20,11 @@ class JornadaController {
     def create() {
         [jornadaInstance: new Jornada(params)]
     }
+    
+    def createFromColegio() {
+        
+        [jornadaInstance: new Jornada(params)]
+    }
 
     def save() {
         def jornadaInstance = new Jornada(params)

@@ -51,6 +51,14 @@
 					
 				</li>
 				</g:if>
+                                
+                                <g:if test="${jornadaInstance?.sede}">
+				<li class="fieldcontain">
+					<span id="tipo-label" class="property-label"><g:message code="jornada.sede.label" default="Sede" /></span>					
+						<span class="property-value" aria-labelledby="tipo-label"><g:fieldValue bean="${jornadaInstance}" field="sede"/></span>
+					
+				</li>
+				</g:if>
 			
 			</ol>
 			<g:form>

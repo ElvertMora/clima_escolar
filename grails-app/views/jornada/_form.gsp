@@ -10,6 +10,13 @@
 	<g:select optionValue="nombreInstitucion" id="colegio" name="colegio.id" from="${com.climaescolar.Colegio.list()}" optionKey="id" required="" value="${jornadaInstance?.colegio?.id}" class="many-to-one"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: jornadaInstance, field: 'sede', 'error')}">
+	<label for="sede">
+		<g:message code="jornada.sede.label" default="Sede" />
+	</label>
+	<g:textField name="sede" maxlength="100" required="" value="${jornadaInstance?.sede}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: jornadaInstance, field: 'grados', 'error')} ">
 	<label for="grados">
 		<g:message code="jornada.grados.label" default="Grados" />

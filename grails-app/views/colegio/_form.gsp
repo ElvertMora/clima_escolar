@@ -91,8 +91,8 @@
 	</label>
 	
 <ul class="one-to-many">
-<g:each in="${colegioInstance?.jornadas?}" var="j">
-    <li><g:link controller="jornada" action="show" id="${j.id}">${j?.tipo}</g:link></li>
+<g:each in="${colegioInstance?.jornadas}" var="j">
+    <li><g:link controller="jornada" action="show" id="${j.id}">${j?.tipo} - Sede ${j?.sede}</g:link></li>
 </g:each>
 <li class="add">
 <g:link controller="jornada" action="create" params="['colegio.id': colegioInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'jornada.label', default: 'Jornada')])}</g:link>
