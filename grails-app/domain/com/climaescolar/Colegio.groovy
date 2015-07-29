@@ -40,7 +40,7 @@ class Colegio implements Serializable {
     String observacionesFinales
     
     Date fechaLlamada = NULL_DATE
-    String actualizo
+    String actualizo 
     String horaLlamada 
     Localidad localidad
     
@@ -49,7 +49,7 @@ class Colegio implements Serializable {
     static constraints = {
         email1 (email: true, nullable: true, blank: true)
         email2 (email: true, nullable: true, blank: true )
-        telefono(nullable: true, blank: true, maxSize: 35)
+        telefono(nullable: true, blank: true, maxSize: 100)
         dane (nullable: false, blank: false, maxSize: 30)
         nombreInstitucion (nullable: false, blank: false, maxSize: 100)
         direccion (nullable: true, blank: true, maxSize: 100)

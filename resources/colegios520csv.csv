@@ -1,4 +1,4 @@
-"id","dane","tipoInstitucion","nombre","direccion","barrio","email1","rector","telefono","email2","localidad.id"
+"id","dane","tipoInstitucion","nombre","direccion","barrio","email1","rector","telefono","email2","localidadId"
 1,"111001000132","DISTRITAL","COL AQUILEO PARRA (IED)","KR 18 A # 187 - 67","EL CEREZO","insdiaquileoparrav1@redp.edu.co","CARLOS EDUARDO GALAN CASTRO","6704916 -- 6745973",,1
 2,"111001029955","DISTRITAL","COL AGUSTIN FERNANDEZ (IED)","KR 7 # 155 - 20","BOSQUE DE PINOS III","coldiagustinfernan1@redp.edu.co","GUSTAVO ADOLFO GALLEGO CASTAÑEDA","6791049 -- 6692881",,1
 3,"111001044806","DISTRITAL","COL FRIEDRICH NAUMANN (IED)","AK 7 # 171 B - 26","LA GRANJA NORTE","cedfriedrichnauma1@redp.edu.co","FANNY MEDINA VARGAS","6796109",,1
@@ -519,4 +519,3 @@
 518,"311001044881","PRIVADO - CONVENIO","LIC Y PREESC TOMMYS","DG 57 Z SUR # 74 H - 16","ISMAEL PERDOMO","liceo_tommys@hotmail.com","MELBA LEONOR MORALES QUEVEDO","3000534 -- 3000535",,19
 519,"211001076346","DISTRITAL","COL CAMP JAIME GARZON (IED)","Kilometro 6 Via Nazareth","CORREG NAZARETH VDA LAS AURAS","iedcampjaimegarzon@redp.edu.co","APOLINAR ESCARRIA GARCIA","4544416",,20
 520,"211850001473","DISTRITAL","COL GIMN DEL CAMPO JUAN DE LA CRUZ VARELA (IED)","KILOMETRO 6 VIA SAN JUAN VD CAPITOLIO","CORREG SAN JUAN DE SUMAPAZ VDA LA UNION","gdelcampojuanvarela@redp.edu.co","RUTH MARIELA SANABRIA TAUTIVA","3407055","gdelcampojuanvarela@hotmail.com",20
-520,,,,,,,,,,
