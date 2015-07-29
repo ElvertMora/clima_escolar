@@ -1,8 +1,14 @@
+import com.climaescolar.Colegio
+import com.climaescolar.Colegio.TipoColegio;
 import com.climaescolar.Role
 import com.climaescolar.User
 import com.climaescolar.UserRole
 import com.climaescolar.Localidad
+
+
 class BootStrap {
+	
+	def sessionFactory
 
     def init = { servletContext ->
         def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true)
@@ -16,6 +22,7 @@ class BootStrap {
         UserRole.create(testUser,adminRole)
         
         cargarLocalidades()
+		cargarColegios520(servletContext)
 
     }
     def destroy = {
@@ -43,4 +50,40 @@ class BootStrap {
         def localidad19 = new Localidad(id: 19, nombreLocalidad:'CIUDAD BOLIVAR').save(flush: true)
         def localidad20 = new Localidad(id: 20, nombreLocalidad:'SUMAPAZ').save(flush: true)
     }
+	
+	def cargarColegios520(servletContext) {
+		def session = sessionFactory.currentSession
+		def entity
+		def resourcesDir = '/../resources'
+		def reader = new File(servletContext.getRealPath("$resourcesDir/colegios520csv.csv")).toCsvMapReader()
+		reader.each {
+			entity = new Colegio()
+			entity.id = Long.valueOf(it.id)
+			entity.dane = it.dane
+			def str = it.tipoInstitucion
+			if(str == "DISTRITAL"){
+				entity.tipoInstitucion = TipoColegio.DISTRITAL
+			}
+			if(str == "DISTRITAL - CONCESION"){
+				entity.tipoInstitucion = TipoColegio.DISTRITAL_CONCESION
+			}
+			if(str == "PRIVADO"){
+				entity.tipoInstitucion = TipoColegio.PRIVADO
+			}
+			if(str == "PRIVADO - CONVENIO"){
+				entity.tipoInstitucion = TipoColegio.PRIVADO_CONVENIO
+			}
+			entity.nombreInstitucion = it.nombre
+			entity.direccion = it.direccion
+			entity.barrio = it.barrio
+			entity.telefono = it.telefono
+			entity.email1 = it.email1
+			entity.email2 = it.email2
+			entity.nombreRector = it.rector
+			entity.localidad = get(it['localidad.id'])
+
+
+			entity.save(validate: false)
+		}
+	}
 }
