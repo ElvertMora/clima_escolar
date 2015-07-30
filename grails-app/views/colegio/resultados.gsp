@@ -1,4 +1,3 @@
-
 <%@ page import="com.climaescolar.Colegio" %>
 <!DOCTYPE html>
 <html>
@@ -24,17 +23,13 @@
 			<table>
 				<thead>
 					<tr>									
-						<g:sortableColumn property="dane" title="${message(code: 'colegio.dane.label', default: 'Dane')}" />
+                                        <th>${message(code: 'colegio.dane.label', default: 'Dane')}</th>
 					
-						<g:sortableColumn property="nombreInstitucion" title="${message(code: 'colegio.nombreInstitucion.label', default: 'Nombre Institucion')}" />
+					<th>${message(code: 'colegio.nombreInstitucion.label', default: 'Nombre Institucion')}</th>
 					
-						<g:sortableColumn property="direccion" title="${message(code: 'colegio.direccion.label', default: 'Direccion')}" />
-                                                
-                                                <g:sortableColumn property="email1" title="${message(code: 'colegio.email1.label', default: 'Email1')}" />
+					<th>${message(code: 'colegio.direccion.label', default: 'Direccion')}</th>                                         
 					
-						<g:sortableColumn property="email2" title="${message(code: 'colegio.email2.label', default: 'Email2')}" />
-					
-						<g:sortableColumn property="telefono" title="${message(code: 'colegio.telefono.label', default: 'Telefono')}" />
+					<th>${message(code: 'colegio.telefono.label', default: 'Telefono')}</th>
 					
 					</tr>
 				</thead>
@@ -45,20 +40,13 @@
 					
 						<td><g:link action="show" id="${colegioInstance.id}">${fieldValue(bean: colegioInstance, field: "nombreInstitucion")}</g:link></td>
 					
-						<td>${fieldValue(bean: colegioInstance, field: "direccion")}</td>
-						
-                                                <td>${fieldValue(bean: colegioInstance, field: "email1")}</td>
-					
-						<td>${fieldValue(bean: colegioInstance, field: "email2")}</td>
+						<td>${fieldValue(bean: colegioInstance, field: "direccion")}</td>						
 					
 						<td>${fieldValue(bean: colegioInstance, field: "telefono")}</td>
 					</tr>
 				</g:each>
 				</tbody>
 			</table>
-			<div class="pagination">
-				<g:paginate total="${colegioInstanceTotal}" />
-			</div>
 		</div>
 	</body>
 </html>

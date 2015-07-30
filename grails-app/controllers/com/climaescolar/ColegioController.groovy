@@ -16,7 +16,45 @@ class ColegioController {
         params.max = Math.min(max ?: 10, 100)
         [colegioInstanceList: Colegio.list(params), colegioInstanceTotal: Colegio.count()]
     }
-
+    
+    def resultados() {
+        params.max = Math.min(params.max ? params.int('max') : 10, 100) 
+        def c = Colegio.createCriteria()
+        //def results = c.list(max:params.max, offset: params.offset ?: 0){ 
+        def results = c.list{   
+            and{
+                if(params.nombreInstitucion!='' && params.nombreInstitucion){
+                    ilike("nombreInstitucion", "%"+params.nombreInstitucion+"%")
+                }
+                if(params.direccion!='' && params.direccion){
+                    ilike("direccion", "%"+params.direccion+"%")
+                }            
+                if(params.barrio!='' && params.barrio){
+                    ilike("barrio", "%"+params.barrio+"%")
+                }
+                if(params.telefono !='' && params.telefono){
+                like("telefono", "%"+params.telefono+"%")
+                }
+                if(params.dane!='' && params.dane){
+                        like("dane", params.dane+"%")
+                }
+                if(params.tipoInstitucion!='null'){
+                    eq("tipoInstitucion", Colegio.TipoColegio.valueOf(params.tipoInstitucion))
+                }
+                if(params.localidad.id!='null'){
+                    localidad{
+                        eq("id", new Integer(params.localidad.id))
+                    } 
+                }
+            }
+        }         
+        [colegioInstanceList: results] 
+    }
+    
+    def search() {
+        [colegioInstance: new Colegio(params)]
+    }
+    
     def create() {
         [colegioInstance: new Colegio(params)]
     }
