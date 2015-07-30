@@ -9,9 +9,21 @@
 <html>
     <head>
         <meta name="layout" content="main"/>
-        <title>Index cordinador</title>
+        <title>Index Cordinador</title>
     </head>
     <body>
-        <h1>Cordinador</h1>
+
+        <div id="status" role="complementary">
+
+
+        </div>
+        <div id="page-body" role="main">
+            <h1>Operario</h1>
+            <ul>
+                <li class="controller"><g:link controller="colegio" action="list">lista de Colegios</g:link></li>
+                <li class="controller"><g:link controller="Operario" action="list">lista de Operarios</g:link></li>
+                <li class="controller"><g:link controller="logout">Cerrar sesión</g:link></li>
+                </ul>
+            </div>
     </body>
 </html>

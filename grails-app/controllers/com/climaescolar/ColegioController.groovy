@@ -3,7 +3,7 @@ package com.climaescolar
 import org.springframework.dao.DataIntegrityViolationException
 import grails.plugin.springsecurity.annotation.Secured
 
-@Secured(['ROLE_ADMIN'])
+@Secured(['ROLE_ADMIN','ROLE_OPERARIO','ROLE_CORDINADOR'])
 class ColegioController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
