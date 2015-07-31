@@ -106,6 +106,26 @@
 <div calss="datsosens">
 
     <h1>Datos sensibilización</h1>
+    
+        
+    <h2>Actividades de sensibilización realizadas</h2>
+    
+		<div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'acciones', 'error')} ">
+			<label for="acciones">
+				<g:message code="colegio.acciones.label" default="Acciones" />
+				
+			</label>
+			
+		<ul class="one-to-many">
+		<g:each in="${colegioInstance?.acciones?}" var="j">
+		    <li><g:link controller="accion" action="show" id="${j.id}">${j?.tipo}</g:link></li>
+		</g:each>
+		<li class="add">
+		<g:link controller="accion" action="create" params="['colegio.id': colegioInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'accion.label', default: 'Accion')])}</g:link>
+		</li>
+		</ul>
+		
+		</div>
 
 
 <div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'contactoEnInstitucion', 'error')} ">

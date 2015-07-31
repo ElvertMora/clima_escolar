@@ -44,7 +44,7 @@ class Colegio implements Serializable {
     String horaLlamada 
     Localidad localidad
     
-    static hasMany = [jornadas : Jornada]
+    static hasMany = [jornadas : Jornada, acciones: Accion]	
     
     static constraints = {
         email1 (email: true, nullable: true, blank: true)

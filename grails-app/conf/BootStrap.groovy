@@ -83,7 +83,6 @@ class BootStrap {
 				entity.email1 = it.email1
 				entity.email2 = it.email2
 				entity.nombreRector = it.rector
-				System.println(it.localidadId)
 				entity.localidad = Localidad.get(it.localidadId)
 				entity.fechaVisita = new Date()
 				entity.fechaLlamada = new Date()
