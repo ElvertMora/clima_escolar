@@ -16,7 +16,7 @@
 </div>
 
 
-<g:form action="resultados" >
+<g:form action="resultados" class="unal-form" >
     
 <div class="fieldcontain">
 <label for="dane">
