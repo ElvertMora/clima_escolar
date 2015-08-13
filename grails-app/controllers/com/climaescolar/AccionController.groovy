@@ -29,7 +29,7 @@ class AccionController {
         }
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'accion.label', default: 'Accion'), accionInstance.id])
-        redirect(action: "show", id: accionInstance.id)
+        redirect(controller:"colegio",action: "edit", id: accionInstance.colegio.id)
     }
 
     def show(Long id) {
@@ -80,25 +80,25 @@ class AccionController {
         }
 
         flash.message = message(code: 'default.updated.message', args: [message(code: 'accion.label', default: 'Accion'), accionInstance.id])
-        redirect(action: "show", id: accionInstance.id)
+        redirect(controller:"colegio",action: "edit", id: accionInstance.colegio.id)
     }
 
     def delete(Long id) {
         def accionInstance = Accion.get(id)
         if (!accionInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'accion.label', default: 'Accion'), id])
-            redirect(action: "list")
+            redirect(controller:"colegio", action: "list")
             return
         }
 
         try {
             accionInstance.delete(flush: true)
             flash.message = message(code: 'default.deleted.message', args: [message(code: 'accion.label', default: 'Accion'), id])
-            redirect(action: "list")
+            redirect(controller:"colegio",action: "edit", id: accionInstance.colegio.id)
         }
         catch (DataIntegrityViolationException e) {
             flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'accion.label', default: 'Accion'), id])
-            redirect(action: "show", id: id)
+            redirect(controller:"colegio",action: "edit", id: accionInstance.colegio.id)
         }
     }
 }

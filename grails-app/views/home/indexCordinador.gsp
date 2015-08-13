@@ -17,11 +17,11 @@
 
 
         </div>
-        <div id="page-body" role="main">
-            <h1>Operario</h1>
+        <div id="page-body" role="main" class="container">
+            <h1>Cordinador</h1>
             <ul>
                 <li class="controller"><g:link controller="colegio" action="list">lista de Colegios</g:link></li>
-                <li class="controller"><g:link controller="Operario" action="list">lista de Operarios</g:link></li>
+                <li class="controller"><g:link controller="Operario" action="list">lista de Gestores UN</g:link></li>
                 <li class="controller"><g:link controller="logout">Cerrar sesión</g:link></li>
                 </ul>
             </div>

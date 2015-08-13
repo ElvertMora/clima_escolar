@@ -1,7 +1,5 @@
 <%@ page import="com.climaescolar.Operario" %>
-
-
-
+<div class="container">
 <div class="fieldcontain ${hasErrors(bean: operarioInstance, field: 'username', 'error')} required">
 	<label for="username">
 		<g:message code="operario.username.label" default="Username" />
@@ -88,5 +86,6 @@
 		
 	</label>
 	<g:checkBox name="passwordExpired" value="${operarioInstance?.passwordExpired}" />
+</div>
 </div>
 

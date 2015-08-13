@@ -16,7 +16,7 @@ form.unal-form .btn-group.open .dropdown-toggle,form.unal-form div.dropup:hover 
 form.unal-form .btn-group.open:hover .dropdown-toggle,form.unal-form div.dropup:hover > button{color:#000!important}
 form.unal-form .socialItems .socialItem{margin:0 .25em!important}
 form.unal-form label{color:#303030;font-family:"Ancizar serif", "MS Serif", "New York", serif;font-size:1.5em;font-weight:normal;letter-spacing:.01em;margin-left:0;padding:1em 0 0;line-height:1.0em}
-form.unal-form select,form.unal-form textarea,form.unal-form input[type=text],form.unal-form input[type=email],form.unal-form input[type=password],form.unal-form input[type=submit]{
+form.unal-form select,form.unal-form textarea,form.unal-form input[type=number],form.unal-form input[type=text],form.unal-form input[type=email],form.unal-form input[type=password],form.unal-form input[type=submit]{
     -khtml-border-radius:5px;
     -khtml-box-shadow:0 0 5px 0 rgba(0,0,0,0.25);
     -moz-appearance:none;-moz-border-radius:5px;

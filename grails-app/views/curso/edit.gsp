@@ -27,7 +27,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form method="post" >
+			<g:form method="post" class="unal-form"  >
 				<g:hiddenField name="id" value="${cursoInstance?.id}" />
 				<g:hiddenField name="version" value="${cursoInstance?.version}" />
 				<fieldset class="form">
