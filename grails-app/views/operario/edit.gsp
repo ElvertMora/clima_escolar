@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'operario.label', default: 'Operario')}" />
+		<g:set var="entityName" value="${message(code: 'operario.label', default: 'Gestor UN')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
 	<body>
@@ -27,7 +27,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form method="post" >
+			<g:form method="post" class="unal-form" >
 				<g:hiddenField name="id" value="${operarioInstance?.id}" />
 				<g:hiddenField name="version" value="${operarioInstance?.version}" />
 				<fieldset class="form">

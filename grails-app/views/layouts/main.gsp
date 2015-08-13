@@ -28,11 +28,15 @@ document.createElement("hgroup");
         <link rel="stylesheet" href="${resource(dir: 'css', file: 'unal.css')}" type="text/css">
         <link rel="stylesheet" href="${resource(dir: 'css', file: 'reset.css')}" type="text/css">
         <link rel="stylesheet" href="${resource(dir: 'css', file: 'form.css')}" type="text/css">
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'tablet.css')}" type="text/css" media="only screen and (min-width: 992px) and (max-width: 1199px)">
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'phone.css')}" type="text/css" media="only screen and (min-width: 768px) and (max-width: 991px)">
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'small.css')}" type="text/css" media="only screen and (max-width: 767px)">
         <script src="${resource(dir: 'js', file: 'bootstrap-dropdown.js')}" type="text/javascript"></script>
         <script src="${resource(dir: 'js', file: 'bootstrap-select.min.js')}" type="text/javascript"></script>
         <script src="${resource(dir: 'js', file: 'jquery.js')}" type="text/javascript"></script>
         <script src="${resource(dir: 'js', file: 'jquery-1.11.1.min.js')}" type="text/javascript"></script>
         <script src="${resource(dir: 'js', file: 'common.js')}" type="text/javascript"></script>
+        <script src="${resource(dir: 'js', file: 'unal.js')}" type="text/javascript"></script> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <g:layoutHead/>

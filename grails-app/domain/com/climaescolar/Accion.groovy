@@ -16,6 +16,8 @@ class Accion {
 	
 	String responsable
 	
+        Cordinador delegadoUn
+        
 	TipoAccion tipo
 	
 	Boolean confirmacion

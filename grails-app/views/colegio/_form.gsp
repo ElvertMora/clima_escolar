@@ -173,20 +173,24 @@
         </div>
 
         <div id="menu3" class="tab-pane fade">
-            <div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'acciones', 'error')} ">
-                <label for="acciones">
-                    <g:message code="colegio.acciones.label" default="Acciones" />
-                </label>
-                <ul class="one-to-many">
-                    <g:each in="${colegioInstance?.acciones}" var="j">
-                        <li><g:link controller="accion" action="show" id="${j.id}">${j?.tipo}</g:link></li>
+            <div class="fieldcontain ${hasErrors(bean: colegioInstance, field: 'acciones', 'error')} ">               
+                    <div class="board">
+                        <g:each in="${colegioInstance?.acciones}" var="j">
+                            <div class="post-it">
+                                <p><g:link controller="accion" action="edit" id="${j.id}">${j.id} ${j?.tipo}</g:link></p>
+                                <p>${j?.fechaEvento}</p>
+                                <p>${j?.descripcion}</p>
+                                <p>${j?.nombreEvento}</p>
+                                <p>${j?.responsable}</p>
+                            </div>
                         </g:each>
+                    </div>
+
                     <li class="add">
                         <g:link controller="accion" action="create" params="['colegio.id': colegioInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'accion.label', default: 'Accion')])}</g:link>
-                        </li>
-                    </ul>
-            </div>        
-        </div>
+                    </li>
+                </div>        
+            </div>
 
     </div>
 </div>
